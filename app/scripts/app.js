@@ -15,6 +15,7 @@ angular.module('ticketfoxApp', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngMaterial',
     'firebase',
     'firebase.ref',
     'firebase.auth'

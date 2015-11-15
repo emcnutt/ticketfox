@@ -13,6 +13,6 @@ angular.module('ticketfoxApp')
     $scope.messages = [];
     var profile = $firebaseObject(Ref.child('users/'+user.uid));
     profile.$bindTo($scope, 'profile');
-    
+
 
   });
