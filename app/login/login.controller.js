@@ -1,13 +1,13 @@
 'use strict';
 /**
  * @ngdoc function
- * @name ticketfoxApp.controller:LoginCtrl
+ * @name ticketfoxApp.controller:LoginController
  * @description
- * # LoginCtrl
+ * # LoginController
  * Manages authentication to any active providers.
  */
-angular.module('ticketfoxApp')
-    .controller('LoginCtrl', function ($scope, Auth, $location) {
+(function() {
+    var LoginController = function ($scope, Auth, $location) {
         $scope.oauthLogin = function(provider) {
             $scope.err = null;
             Auth.$authWithOAuthPopup(provider, {rememberMe: true}).then(redirect, showError);
@@ -25,4 +25,9 @@ angular.module('ticketfoxApp')
         function showError(err) {
             $scope.err = err;
         }
-    });
+    };
+
+    angular
+        .module('ticketfoxApp')
+        .controller('LoginController', LoginController);
+})

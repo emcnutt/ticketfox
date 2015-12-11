@@ -1,13 +1,13 @@
 'use strict';
 /**
  * @ngdoc function
- * @name ticketfoxApp.controller:ChatCtrl
+ * @name ticketfoxApp.controller:ChatController
  * @description
- * # ChatCtrl
+ * # ChatController
  * A demo of using AngularFire to manage a synchronized list.
  */
-angular.module('ticketfoxApp')
-    .controller('ChatCtrl', function ($scope, Ref, $firebaseArray, $timeout) {
+(function() {
+    var ChatController = function ($scope, Ref, $firebaseArray, $timeout) {
         // synchronize a read-only, synchronized array of messages, limit to most recent 10
         $scope.messages = $firebaseArray(Ref.child('messages').limitToLast(10));
 
@@ -31,4 +31,9 @@ angular.module('ticketfoxApp')
                 $scope.err = null;
             }, 5000);
         }
-  });
+    };
+
+    angular
+        .module('ticketfoxApp')
+        .controller('ChatController', ChatController);
+})();
