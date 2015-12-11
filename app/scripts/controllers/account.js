@@ -7,12 +7,10 @@
  * Provides rudimentary account management functions.
  */
 angular.module('ticketfoxApp')
-  .controller('AccountCtrl', function ($scope, user, Auth, Ref, $firebaseObject, $timeout) {
-    $scope.user = user;
-    $scope.logout = function() { Auth.$unauth(); };
-    $scope.messages = [];
-    var profile = $firebaseObject(Ref.child('users/'+user.uid));
-    profile.$bindTo($scope, 'profile');
-
-
-  });
+    .controller('AccountCtrl', function ($scope, user, Auth, Ref, $firebaseObject, $timeout) {
+        $scope.user = user;
+        $scope.logout = function() { Auth.$unauth(); };
+        $scope.messages = [];
+        var profile = $firebaseObject(Ref.child('users/'+user.uid));
+        profile.$bindTo($scope, 'profile');
+    });
