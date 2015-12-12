@@ -209,8 +209,8 @@ module.exports = function (grunt) {
         filerev: {
             dist: {
                 src: [
-                    '<%= yeoman.app %>/*.js',
-                    '<%= yeoman.app %>/{,*/}*.js',
+                    '<%= yeoman.dist %>/*.js',
+                    '<%= yeoman.dist %>/{,*/}*.js',
                     '<%= yeoman.dist %>/styles/{,*/}*.css',
                     '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     '<%= yeoman.dist %>/styles/fonts/*'
@@ -441,7 +441,6 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'newer:jshint',
         'test',
-        // Commented out for now until i figure out how this works
-        // 'build'
+        'build'
     ]);
 };

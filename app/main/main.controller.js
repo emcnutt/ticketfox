@@ -13,7 +13,8 @@
             'AngularJS',
             'Karma'
         ];
-    }
+    };
+
     angular
         .module('ticketfoxApp')
         .controller('MainController', MainController);

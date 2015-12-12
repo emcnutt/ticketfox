@@ -30,4 +30,4 @@
     angular
         .module('ticketfoxApp')
         .controller('LoginController', LoginController);
-})
+})();
